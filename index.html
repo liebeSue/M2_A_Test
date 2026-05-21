@@ -3,27 +3,55 @@
 <head>
   <link rel="stylesheet" href="pannellum.css"/>
   <script src="pannellum.js"></script>
-  <style>html, body, #panorama { width:100%; height:100vh; margin:0; }</style>
+
+  <style>
+    html, body, #panorama {
+      width:100%;
+      height:100vh;
+      margin:0;
+    }
+
+    #textbox {
+      position: absolute;
+      top: 40px;
+      right: 40px;
+
+      z-index: 9999;
+
+      color: rgba(255,255,255,0.85);
+
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+
+      padding: 8px 0;
+    }
+  </style>
 </head>
+
 <body>
+
+  <div id="textbox">
+    this is just a test
+  </div>
+
   <div id="panorama"></div>
+
   <script>
     pannellum.viewer('panorama', {
       default: {
         firstScene: 'scene1',
         sceneFadeDuration: 1000
       },
-		<div id="textbox">
-    this is just a test
-</div>
 
-<div id="panorama"></div>
       scenes: {
         scene1: {
           title: 'Pièce 1',
           panorama: 'PANO1.jpg',
           autoLoad: true,
-	  hotSpotDebug: true,
+          hotSpotDebug: true,
+
           hotSpots: [
             {
               pitch: -22.033251177322494,
@@ -34,11 +62,13 @@
             }
           ]
         },
+
         scene2: {
           title: 'Pièce 2',
           panorama: 'PANO2.jpg',
           autoLoad: true,
-	  hotSpotDebug: true,
+          hotSpotDebug: true,
+
           hotSpots: [
             {
               pitch: -10,
@@ -52,5 +82,6 @@
       }
     });
   </script>
+
 </body>
 </html>
